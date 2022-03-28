@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio site</title>
+    <link rel="stylesheet" href="./dist/jquery.fullpage.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link
+      rel="stylesheet" href="./css/swiper-bundle.min.css"/>
+    <style>
+    /* header */
+        header{ width: 100%; height: 180px; 
+            top: -80px; left:0; position:fixed; background-color: black; 
+            display: flex; 
+            z-index: 99; font-family: "Jost Regular";
+        }
+        .header{width: 1920px; margin: auto; display: flex;}
+        #fullpage{width: 1920px; margin: auto;}
+        header h1{font-size: 0%; margin: 25px;}
+        
+        header ul{ display: flex;  list-style: none; font-size:25px; justify-content: center;
+           margin-left: 320px; }
+        .lnb{ height: 30px; }
+        .lnb>ul>li{display: flex;}
+        .Menu{top: -90px;}
+        .Menu a{ display: block; padding: 70px;
+                background-image: url(./img/line_sua_white.png);color: #fff;
+                background-repeat: no-repeat;
+                background-position: right 80px;}
+               /* color: #fff;} */
+        .Menu li>p{background-image: url(./img/line_sua_white.png);
+                background-repeat: no-repeat;
+                background-position: left 80px;
+            }
+        
+        header a:hover{ transform: scale(0.95); }
+     
+        header a{ display: block; padding: 1em; }
+        
+        .lnb>ul>li>a{ display: block;}
+        .lnb>ul>li:nth-child(4){position: relative;}
+        .lnb>ul>li:nth-child(4):hover .subMenu{display: block;}
+        .subMenu{text-align: center; display: none; position: absolute; z-index: 99; left: -315px; top:115px;
+                     width: 260px; background-color: black; 
+        }
+        .subMenu a{  display: block; text-align: center;
+                    border-bottom: 1px solid black; 
+                    background-image: none; padding: 10px;           
+                }
+        .subMenu a:hover{color: gray; }
+    
+    /*left slide button */
+        #fp-nav ul li a span{
+         background-color: #fff;}
+
+                
+
+    /* section */
+        .section{width: 100%; justify-content: center center;  background-color: black;}
+        .section h3{font-size: 25px; margin-top: 640px; margin-left: 865px; font-family: "Jost Thin";
+        color: #fff;}
+
+        .section h1{font-size: 30px;  margin-top: 0px; margin-left: 775px; font-family: "Jost Thin"; color: #fff;  }
+       
+        .section:nth-child(1){background-image: url(./img/PortfolioBackground.jpg);
+          background-color: black;
+          background-repeat: no-repeat;
+          background-position: 250px 0px;
+          width: 100%;}
+        .Part{margin-top: 40px;}
+        
+
+    /* KEYWORD */
+        
+        .KEYWORD{display: flex; }
+        
+        .KEYWORD h1{margin-left: 20%; font-size: 40px;
+          margin-top: 30px;}
+        .KEYWORD h2{width: 500px; height:4px; background-color: #fff; margin-left:20px; margin-top: 45px;}
+        .KEYWORD h4{margin-left: 15px; margin-top: 30px; font-size: 40px; font-family: "Jost Bold"; color: #fff;}
+            
+        .content img{width: 60%;
+        margin-left: 430px;}
+        /* .content{display: flex; color: #fff;
+        margin-left: 400px;}
+        .content01{width: 350px; height: 350px;
+        border-radius: 50%; background-color: #fff;}
+        .content a{position:relative; font-size: 50px;
+          color: black; z-index: 99999; }
+        
+        .content02{width: 350px; height: 350px;
+        border-radius: 50%; background-color: #fff;}
+        .content03{width: 350px; height: 350px;
+        border-radius: 50%; background-color: #fff;} */
+
+        .keyword{margin-top: 80px;
+        margin-left: 900px;}
+        .keyword h5{display: block;
+          color: #fff; font-size: 20px;
+         font-family: "Jost Thin";
+        margin-left: 55px;}
+        .keyword h6{display: block;
+          width: 200px; height:2px; background-color: #fff;}
+
+ 
+    /* ABOUT */
+       .ABOUT img{width: 1600px;}
+
+       .about{margin-top:-10px;
+        margin-left: 900px;}
+        .about h5{display: block;
+          color: #fff; font-size: 20px;
+         font-family: "Jost Thin";
+        margin-left: 70px;}
+        .about h6{display: block;
+          width: 200px; height:2px; background-color: #fff;}
+
+    /* PORTFOLIO_01 */
+      .PORTFOLIO01{display: flex;}
+      .PORTFOLIO01 img{size: 15%; margin-left: 300px;}
+
+      .text h1{margin-left: 250px; margin-top: 100px;}
+      .text h5{width: 700px; height:1px; background-color: #fff;
+        margin-left: -210px;}
+      .text h4{ font-size: 16px; color: #fff;
+      font-family:"NotoSansCJKkr Thin";
+      line-height: 30px;
+      margin-left: 250px; margin-top:30px;}
+
+      .Portfolio01{margin-top:-10px;
+        margin-left: 900px;}
+        .Portfolio01 h5{display: block;
+          color: #fff; font-size: 20px;
+         font-family: "Jost Thin";
+        margin-left: 40px;}
+        .Portfolio01 h6{display: block;
+          width: 200px; height:2px; background-color: #fff;}
+
+      /* PORTFOLIO_02 */
+      .PORTFOLIO02{display: flex;}
+      .PORTFOLIO02 img{size: 15%; margin-left: 300px;}
+
+      .text02 h1{margin-left: 220px; margin-top: 100px;}
+      .text02 h5{width: 700px; height:1px; background-color: #fff;
+        margin-left: -220px;}
+      .text02 h4{ font-size: 16px; color: #fff;
+      font-family:"NotoSansCJKkr Thin";
+      line-height: 30px;
+      margin-left: 230px; margin-top:30px;}
+
+      .Portfolio02{margin-top:-10px;
+        margin-left: 900px;}
+        .Portfolio02 h5{display: block;
+          color: #fff; font-size: 20px;
+         font-family: "Jost Thin";
+        margin-left: 40px;}
+        .Portfolio02 h6{display: block;
+          width: 200px; height:2px; background-color: #fff;}
+      
+      /* PORTFOLIO_03 */  
+        
+      .PORTFOLIO03{display: flex;}
+      .PORTFOLIO03 img{size: 15%; margin-left: 300px;}
+
+      .text h1{margin-left: 250px; margin-top: 100px;}
+      .text h5{width: 700px; height:1px; background-color: #fff;
+        margin-left: -230px;}
+      .text h4{ font-size: 15px; color: #fff;
+      font-family:"NotoSansCJKkr Thin";
+      line-height: 25px;
+      margin-left: 250px; margin-top:30px;}
+
+      .Portfolio03{margin-top:-10px;
+        margin-left: 900px;}
+        .Portfolio03 h5{display: block;
+          color: #fff; font-size: 20px;
+         font-family: "Jost Thin";
+        margin-left: 40px;}
+        .Portfolio03 h6{display: block;
+          width: 200px; height:2px; background-color: #fff;}
+
+     /* CONTACT */  
+         .Event{display: flex;
+            width: 100%;
+            margin-top: 10px;
+            height: 660px;
+            margin-left: 400px;
+          }
+         
+      /* footer */
+         
+
+
+
+      @media screen and (max-width:1050px){
+        /* header */
+            .header h1{display: none;}
+            header ul{ display: flex;  list-style: none; font-size: 16px; justify-content: center;
+            margin-left:-210px;}
+            .subMenu{text-align: center; display: none; position: absolute; 
+              z-index: 99; left: 213px; top:70px; width: 110px; background-color: #fff; 
+        }
+     
+
+      @media screen and (max-width:600px){
+
+          /* header */
+            .header h1{display: none;}
+              header ul{ display: flex;  list-style: none; font-size: 16px; justify-content: center;
+              margin-left:-210px;}
+              
+            header ul{ display: flex;  list-style: none; font-size: 16px; justify-content: center;
+            margin-left:-10px; flex-direction: column;
+            margin-top: 100px; text-align: center;}
+           .Menu{display: none; background-color: #fff; width: 130px;}
+           .Menu a{background-image: none;  padding:5px; 
+            margin-left: 26px; text-align: center;
+            /*  */  background: opacity(0.5);
+            border-radius: 5px; 
+            }
+            .Menu a:nth-child(1){padding-top: 0;}
+            .Menu span{ position: relative; z-index: 99999; display: block; text-align: center; width:90px;}
+            .subMenu{ margin-left: -80px; margin-top: -70px; background-color: black; color: #fff;height: 110px; z-index: 99;}
+            .subMenu a{line-height: 15px; border: none; 
+              margin-left: 0px; margin-top: 5px;}
+            
+          /* hamburger */
+            .hamburger{display:block; 
+              margin-left: -450px;
+              margin-top: 30px;
+            
+           }
+        }
+      }
+
+        @media screen and (max-width:480px){
+
+        }
+    </style>    
+</head>
+<body>
+    <header>
+            <div class="header">
+                <h1>PORTFOLIO<a href="#section1"></a></h1>             
+             <nav class="lnb">
+                <ul class="Menu">
+                    <li data-menuanchor='section1'><p><a href="#section1"><span>HOME</span></p></a></li>
+                    <li data-menuanchor='section2'><a href="#section2"><span>KEYWORD</span></a></li>
+                    <li data-menuanchor='section3'><a href="#section3"><span>ABOUT</span></a></li>
+                    <li data-menuanchor='section4'><a href="#section4"><span>PORTFOLIO</span></a>
+                        <ul class="subMenu">
+                            <li><a href="#section4">Portfolio 1</a></li>
+                            <li><a href="#section5">Portfolio 2</a></li>
+                            <li><a href="#section6">Portfolio 3</a></li>
+                        </ul>
+                    </li>
+                    <li data-menuanchor='section7'><a href="#section7"><span>CONTACT</span></a></li>
+                </ul>
+                
+                <div class="hamburger" id="hamburger-5">
+                  <span class="line"></span>
+                  <span class="line"></span>
+                  <span class="line"></span>
+                </div>
+
+             </nav>
+            </div>
+    </header>
+    <!--메뉴로 이동-->
+    <div id="fullpage">
+        <div class="section">
+            <h3>WEB DESIGNER</h3>
+            <h1>PORTFOLIO BY AHNHEEBIN</h1>
+        </div>
+
+        <div class="section">
+            <div class="Part">
+              <div class="KEYWORD">
+                  <h1>톱니바퀴처럼 끊임없이<br>
+                    발전하는<br>
+                    웹디자이너<br>
+                  </h1>
+                  <h2></h2>
+                  <h4>AHN HEEBIN</h4>
+              </div>
+
+              <div class="content">
+                <!-- <div class="content01">
+                  <a>Passion</a>
+                </div>
+                <div class="content02">
+                  <a>diligence</a>
+                </div>
+                <div class="content03">
+                  <a>dream&goal</a>
+                </div> -->
+
+                <img src="./img/keyword.jpg" alt="">
+              </div>
+
+              <div class="keyword">
+                <h5>KEY WORD</h5>
+                  <h6></h6>
+              </div>
+            </div>
+        </div>
+
+        <div class="section"> 
+            <div class="Part">
+              <div class="ABOUT">
+                  <img src="./img/About.jpg" alt="">
+              </div>
+
+              <div class="about">
+                <h5>ABOUT</h5>
+                  <h6></h6>
+              </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="Part">
+              <div class="PORTFOLIO01">
+                  <a href="#"><img src="./img/trendit slide web.png" alt=""></a>
+                  <div class="text">
+                    <h1>FASHION WEB SITE<br>
+                      ( SLIDE ) TRENDIT</h1>
+                    <h5></h5>
+                    <h4>이전에 근무했던 회사의 브랜드인<br>
+                      ‘TRENDIT’ 패션사이트를 <br>
+                      HTML / CSS / JQUERY 기술을<br>
+                      통해 새로운 사이트로 재탄생시켰다.<br>
+                      사용자들이 불편함을 느꼈을것 같은<br>
+                      부분들을 개선하여 재디자인하였다<br>
+                    
+                      잘보이지 않아 숨어있던 카테고리 메뉴를<br>
+                      메인화면에 배치하였고<br>
+                      마우스오버시 컬러가 변하게하여<br>
+                      경계가 분명하도록 하였다.<br>
+                    
+                      글씨가 작아 불편했던 부분들<br>
+                      또한 개선하여 폰트사이즈를<br>
+                      크고 굵게 개선시켰다.
+                      </h4>
+                  </div>
+              </div>
+              
+              <div class="Portfolio01">
+                <h5>PORTFOLIO 01</h5>
+                  <h6></h6>
+              </div>
+             
+            </div>
+        </div>
+
+        <div class="section">
+          <div class="Part">
+            <div class="PORTFOLIO02">
+                <a href="#"><img src="./img/trendit fullfage web.png" alt=""></a>
+                <div class="text02">
+                  <h1>FASHION WEB SITE<br>
+                    ( FULLPAGE ) TRENDIT</h1>
+                  <h5></h5>
+                  <h4>위의 제작된 사이트와 같은<br>
+                    패션브랜드 TRENDIT사이트로 <br>
+                    레이아웃을 다르게 하여<br>
+                    다른 버전의 모습을 디자인하였다<br>
+                    슬라이드형이 아닌<br>
+                    한순에 여러 상품을 볼수있는<br>
+                    풀페이지 레이아웃으로<br>
+                    여러사용자들에게 편리함을<br>
+                    제공하고자 다른버전으로<br>
+                    제작하였다.<br>
+
+                    이전에 근무했던 회사의 브랜드인<br>
+                    ‘TRENDIT’ 패션사이트를 <br>
+                    HTML / CSS / JQUERY 기술을<br>
+                    통해 새로운 사이트로 재탄생시켰다.<br>
+                
+                </div>
+            </div>
+            
+            <div class="Portfolio02">
+              <h5>PORTFOLIO 02</h5>
+                <h6></h6>
+            </div>
+           
+          </div>
+      </div>
+
+        <div class="section">
+          <div class="Part">
+            <div class="PORTFOLIO03">
+                <a href="https://dksgmlqls2.wixsite.com/hb-fashionweb"><img src="./img/my portfolio web.png" alt=""></a>
+                <div class="text">
+                  <h1><strong>MY PORTFOLIO SITE</strong><br>
+                    CONTENT DESIGN</h1>
+                  <h5></h5>
+                  <h4>지금까지 근무하면서 제작해왔던<br>
+                    포트폴리오들을 정리해놓은 사이트로<br>
+                    wix로 제작되있습니다.<br>
+                    <br>
+                     1) 첫번째칸 INTRO DESIGN<br>
+                    상세페이지 상단에 <br>
+                    주요제품 설명이 들어간 <br>
+                    인트로디자인을 볼수있습니다.<br>
+                    2 )두번째칸 WEB PAGE DESIGN<br>
+                    상세페이지 작업물을 확인하실수 있습니다.<br>
+                    3 )세번째칸 MODEL RETOUCHINGD <br>
+                    모델 보정본 BEFORE/AFTER <br>
+                    작업물이 있으며,<br>
+                    4) WEB/COMTENTS DESIGN <br>
+                    배너 및 자사몰 콘텐츠를 디자인한<br>
+                     다양한 작업물을 보실수있습니다.<br>
+                    5) MEDIA CONTENTS <br>
+                    홍보영상 및 SNS 광고영상편집물을<br>
+                     확인하실수 있습니다. (after effect 사용)
+                     
+                    </h4>
+                </div>
+            </div>
+            
+            <div class="Portfolio03">
+              <h5>PORTFOLIO 03</h5>
+                <h6></h6>
+            </div>
+           
+          </div>
+      </div>
+            
+
+        <div class="section">
+            <div class="Part">
+
+              <div class="FORM">
+                <h1>CONTACT</h1>
+                <h2></h2> 
+                <div class="form">
+                  <form name="NAME" action="">
+                    <label>YOUR NAME<input type="text" placeholder="YOUR NAME" id="userId"
+                    name="userId" autofocus required></label>
+                    <label>YOUR EMAIL ADDRESS<input type="password" placeholder="YOUR EMAIL ADDRESS"
+                    id="userPwd" name="userPwd"></label>
+                    <label><input type="text" name="userName" id="userName"
+                    placeholder="YOUR PHONE NUMBER" readonly></label>
+                    <label><input type="text" name="userName" id="userName"
+                    placeholder="MESSAGE" disabled></label>
+                  </form>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        <style>
+           .FORM h1{margin-left: 90px;margin-top: 30px;
+          margin-bottom: -70px;}
+          .FORM h2{width: 400px; height:1px; background-color: #fff;
+          margin-left: -50px; margin-top: 60px;}
+          .FORM{ margin-left: 800px;
+            width: 350px; height: 400px; border-radius: 120px;
+           border: 3px solid white; padding: 10px;}
+          form[name='NAME'] {width: 400px; margin: 100px auto;}
+          .form{margin-left: 50px;}
+         form>label{display: block; font-size: 0;}
+         input{font-size: 16px; padding: 12px;}
+         /* input[type="text"]{border: 1px solid rosybrown;} */
+       /* border가 아닌 outline으로 디자인 */
+         input[type="text"]{outline: 1px solid #fff;}
+         input[type="text"]:focus{outline: 5px solid #fff;
+          box-shadow: 0 0 0 transparent;
+          border-width: 0;}
+      
+         input::placeholder{color: black;}
+         input:focus::placeholder{color: black; border: 1px solid #fff;}
+      </style>
+ 
+    <script src="./script/jquery-3.6.0.min.js"></script>
+    <script src="./dist/jquery.fullpage.js"></script>
+    <script src="./script/swiper-bundle.min.js"></script>
+  
+   <script>
+    $(function() {
+        $('#fullpage').fullpage({
+            autoScrolling:true,
+            scrollHorizontally: true,
+            navigation:true,
+            navigationPosition:'left',
+            anchors:['section1','section2','section3','section4','section5','section6','section7','section8'],
+            // fixed header 설정
+            //  특정하게 처리할일 생기면 
+        });
+    });
+
+    // hamburger
+    $(document).ready(function(){
+    $(".hamburger").click(function(){
+    $(this).toggleClass("is-active");
+     });
+    });
+
+    // hamburger - click - menu
+    let toggle = false;
+    $('.hamburger').on('click',function(){
+    if(!toggle){
+        $(this).css({'margin-top': '-275px'})
+        $('.Menu').css({'display': 'block'})
+        toggle = true;
+    }else{
+       $(this).css({'margin-top': '30px'})
+        $('.Menu').css({'display': 'none'})
+        toggle = false;
+    }
+    })
+   
+
+   </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
