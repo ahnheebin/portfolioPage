@@ -450,8 +450,8 @@
                     <input type="EMAIL ADDRESS" placeholder="EMAIL ADDRESS" required>
                     <input type="TEL" placeholder="TEL">
                     <!-- <input type="button" value="전송" id="button"> -->
-                    <textarea name="ta" id="ta" cols="30" rows="10"
-                    placeholder="MESSAGE"  >
+                    <textarea name="ta" id="ta" cols="30" rows="20"
+                    placeholder="MESSAGE"> MESSAGE
                     </textarea>
                     <input type="button" value="전송" id="button">
                   </form>
@@ -462,12 +462,15 @@
 
 
         <style>
-          textarea{resize: none; width: 223px; height: 100px; }
-          .button{}
+          textarea{resize: none; width: 223px; height: 100px; 
+           color:gray; padding: 8px; font-size: 18px;
+           font-family: "Jost Light" ;}
+          #button{margin-left: 80px; margin-top: 10px;
+           color: black; border-radius: 10px;}
            .FORM h1{margin-left: 90px;margin-top: 30px;
           margin-bottom: -70px;}
           .FORM h2{width: 400px; height:1px; background-color: #fff;
-          margin-left: -50px; margin-top: 70px;}
+          margin-left: -35px; margin-top: 70px;}
           .FORM{ margin-left: 800px;
             width: 350px; height: 500px; border-radius: 170px;
            border: 3px solid white; padding: 10px;}
@@ -478,13 +481,8 @@
          
          /* input[type="text"]{border: 1px solid rosybrown;} */
        /* border가 아닌 outline으로 디자인 */
-         input[type="text"]{outline: 1px solid #fff;}
-         input[type="text"]:focus{outline: 5px solid #fff;
-          box-shadow: 0 0 0 transparent;
-          border-width: 0;}
+        
       
-         input::placeholder{color: black;}
-         input:focus::placeholder{color: black; border: 1px solid #fff;}
       </style>
  
     <script src="./script/jquery-3.6.0.min.js"></script>
