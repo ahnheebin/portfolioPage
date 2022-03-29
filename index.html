@@ -324,12 +324,15 @@
         <div class="section">
             <div class="Part">
               <div class="PORTFOLIO01">
-                  <a href="#"><img src="./img/trendit slide web.png" alt=""></a>
+                  <a href="https://ahnheebin.github.io/trenditSlide/">
+                    <img src="./img/trendit slide web.png" alt=""></a>
                   <div class="text">
                     <h1>FASHION WEB SITE<br>
                       ( SLIDE ) TRENDIT</h1>
                     <h5></h5>
-                    <h4>이전에 근무했던 회사의 브랜드인<br>
+                    <h4><b>반응형 웹 사이트 제작</b><br>
+                      <br>
+                      이전에 근무했던 회사의 브랜드인<br>
                       ‘TRENDIT’ 패션사이트를 <br>
                       HTML / CSS / JQUERY 기술을<br>
                       통해 새로운 사이트로 재탄생시켰다.<br>
@@ -359,7 +362,8 @@
         <div class="section">
           <div class="Part">
             <div class="PORTFOLIO02">
-                <a href="#"><img src="./img/trendit fullfage web.png" alt=""></a>
+                <a href="https://ahnheebin.github.io/trenditGeneralSite/">
+                  <img src="./img/trendit fullfage web.png" alt=""></a>
                 <div class="text02">
                   <h1>FASHION WEB SITE<br>
                     ( FULLPAGE ) TRENDIT</h1>
@@ -370,7 +374,7 @@
                     다른 버전의 모습을 디자인하였다<br>
                     슬라이드형이 아닌<br>
                     한순에 여러 상품을 볼수있는<br>
-                    풀페이지 레이아웃으로<br>
+                    한페이지 레이아웃으로<br>
                     여러사용자들에게 편리함을<br>
                     제공하고자 다른버전으로<br>
                     제작하였다.<br>
@@ -439,15 +443,17 @@
                 <h1>CONTACT</h1>
                 <h2></h2> 
                 <div class="form">
-                  <form name="NAME" action="">
-                    <label>YOUR NAME<input type="text" placeholder="YOUR NAME" id="userId"
-                    name="userId" autofocus required></label>
-                    <label>YOUR EMAIL ADDRESS<input type="password" placeholder="YOUR EMAIL ADDRESS"
-                    id="userPwd" name="userPwd"></label>
-                    <label><input type="text" name="userName" id="userName"
-                    placeholder="YOUR PHONE NUMBER" readonly></label>
-                    <label><input type="text" name="userName" id="userName"
-                    placeholder="MESSAGE" disabled></label>
+                  <form name="contect" action="">
+                    <!-- <label>userId<input type="text" placeholder="YOUR NAME" id="userId"
+                    name="userId" autofocus required></label> -->
+                    <input type="NAME" placeholder="NAME" required>
+                    <input type="EMAIL ADDRESS" placeholder="EMAIL ADDRESS" required>
+                    <input type="TEL" placeholder="TEL">
+                    <!-- <input type="button" value="전송" id="button"> -->
+                    <textarea name="ta" id="ta" cols="30" rows="10"
+                    placeholder="MESSAGE"  >
+                    </textarea>
+                    <input type="button" value="전송" id="button">
                   </form>
                 </div>
               </div>
@@ -456,17 +462,20 @@
 
 
         <style>
+          textarea{resize: none; width: 223px; height: 100px; }
+          .button{}
            .FORM h1{margin-left: 90px;margin-top: 30px;
           margin-bottom: -70px;}
           .FORM h2{width: 400px; height:1px; background-color: #fff;
-          margin-left: -50px; margin-top: 60px;}
+          margin-left: -50px; margin-top: 70px;}
           .FORM{ margin-left: 800px;
-            width: 350px; height: 400px; border-radius: 120px;
+            width: 350px; height: 500px; border-radius: 170px;
            border: 3px solid white; padding: 10px;}
           form[name='NAME'] {width: 400px; margin: 100px auto;}
-          .form{margin-left: 50px;}
+          .form{margin-left: 50px; margin-top: 50px;}
          form>label{display: block; font-size: 0;}
          input{font-size: 16px; padding: 12px;}
+         
          /* input[type="text"]{border: 1px solid rosybrown;} */
        /* border가 아닌 outline으로 디자인 */
          input[type="text"]{outline: 1px solid #fff;}
